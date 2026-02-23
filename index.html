@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Hub | Final Version</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* --- HUMAN-DESIGNED CSS --- */
+        body { 
+            background-color: #f5f7f9; 
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #334155;
+        }
+
+        /* 1. FAINT NAVBAR */
+        .navbar-faint {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 0;
+        }
+
+        /* 2. THE NESTED DROPDOWN (Menu inside Menu) */
+        .dropdown-submenu { position: relative; }
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%; /* Positions the 2nd menu to the right */
+            display: none;
+            margin-top: -1px;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        /* Shows the 2nd menu when you hover over the parent item */
+        .dropdown-submenu:hover > .dropdown-menu {
+            display: block;
+        }
+
+        /* Centered Page Layout */
+        .content-card {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .section-header { border-left: 4px solid #3b82f6; padding-left: 15px; margin-bottom: 25px; font-weight: 700; }
+        .btn-submit { background-color: #3b82f6; color: white; border: none; padding: 10px 20px; border-radius: 6px; }
+        .btn-reset { background: transparent; color: #64748b; border: none; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light navbar-faint sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="https://getbootstrap.com" target="_blank">PORTAL_V1</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="https://www.google.com" target="_blank">Google</a></li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#">Official Sites</a>
+                    <ul class="dropdown-menu border-0 shadow-sm">
+                        <li><a class="dropdown-item" href="https://www.wikipedia.org" target="_blank">Wikipedia</a></li>
+                        
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">Social Media &raquo;</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+                                <li><a class="dropdown-item" href="https://www.github.com" target="_blank">GitHub</a></li>
+                                <li><a class="dropdown-item" href="https://twitter.com" target="_blank">Twitter/X</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="https://www.microsoft.com" target="_blank">Microsoft</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="content-card">
+        
+        <div class="row g-5">
+            
+            <div class="col-lg-7">
+                <h5 class="section-header">Resource Directory</h5>
+                <div class="table-responsive">
+                    <table class="table table-hover border">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Category</th>
+                                <th>Provider</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Web Docs</td>
+                                <td>MDN Web</td>
+                                <td><span class="badge bg-success">Verified</span></td>
+                            </tr>
+                            <tr>
+                                <td>Search</td>
+                                <td>Google</td>
+                                <td><span class="badge bg-primary">Active</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <h5 class="section-header">Inquiry Form</h5>
+                <form class="p-4 bg-light rounded shadow-sm">
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Your Name</label>
+                        <input type="text" class="form-control" placeholder="Enter name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Inquiry Type</label>
+                        <select class="form-select">
+                            <option>General Support</option>
+                            <option>Resource Access</option>
+                        </select>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mt-4">
+                        <button type="submit" class="btn btn-submit">Send Message</button>
+                        <button type="reset" class="btn btn-reset small">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="mt-5 pt-5 border-top">
+            <h5 class="text-center mb-4 fw-bold">Image Showcase</h5>
+            <div id="finalCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card mx-auto shadow-sm border-0" style="width: 20rem;">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=80" class="card-img-top rounded" alt="tech">
+                            <div class="card-body text-center">
+                                <h6 class="fw-bold">Digital Workspace</h6>
+                                <p class="text-muted small">Modern tools for modern students.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card mx-auto shadow-sm border-0" style="width: 20rem;">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=500&q=80" class="card-img-top rounded" alt="global">
+                            <div class="card-body text-center">
+                                <h6 class="fw-bold">Global Data</h6>
+                                <p class="text-muted small">Connecting information worldwide.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#finalCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#finalCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="text-center py-4 text-muted small">
+    &copy; 2026 Information Hub Submission. Final Version.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
